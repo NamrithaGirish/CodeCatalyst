@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:supabase/supabase.dart';
 
 import 'signin.dart';
 
@@ -16,7 +17,10 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  
+  final supabase = SupabaseClient(
+    'https://dxhhmevcczynimcgirdd.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR4aGhtZXZjY3p5bmltY2dpcmRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODI3MjEwMzAsImV4cCI6MTk5ODI5NzAzMH0.LvLPJjnK2jGGenzg0EwccvN7BmVCW2z9TK85hVcJOZ4',
+  );
   @override
 
   void initState() {
@@ -59,7 +63,17 @@ class _SignUpState extends State<SignUp> {
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                   ),
-                    onPressed: () {},
+                    onPressed: () async{
+                        final response =  await supabase.auth.signUp(
+                email: email.toString(),
+                password: password.toString(),
+              
+              );
+                      },
+              // Sign in a user with email and password
+              
+              // Check if the sign-in was successful
+                    
                   child: Text('SIGN UP',
                   style: GoogleFonts.poppins(fontStyle: FontStyle.normal, fontWeight: FontWeight.w600,color: Colors.white),) ,
                 )
@@ -69,8 +83,6 @@ class _SignUpState extends State<SignUp> {
       ),
     );
   }
-
-
 }
 
 

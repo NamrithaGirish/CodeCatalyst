@@ -15,6 +15,8 @@ class Emergency extends StatefulWidget {
 class _EmergencyState extends State<Emergency> {
   TextEditingController location=TextEditingController();
   TextEditingController condition =TextEditingController();
+  
+  
   @override
   Widget build(BuildContext context) {
     final double width=MediaQuery.of(context).size.width;
@@ -55,21 +57,18 @@ class _EmergencyState extends State<Emergency> {
               ),
             ),
              SizedBox(height: 25,),
-            Container(
-              height: 50 ,
-              width:width/1.5 ,
-              child: TextFormField(
-              obscureText: false,
-              controller: location,
-              decoration: InputDecoration(
-                labelText: 'Condition',
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black,),
-                  borderRadius: BorderRadius.all(Radius.circular(10),),
-                ),
-              ),
-              ),
-            ),
+
+            DropdownButton<String>(
+              hint : Text("Condition"),
+  items: <String>['Head Injury', 'Chest Pain', 'Body Pain'].map((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(value),
+    );
+  }).toList(),
+  onChanged: (_) {},
+),
+    
             SizedBox(
               height: 20,
             ),
