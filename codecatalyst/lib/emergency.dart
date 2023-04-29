@@ -5,8 +5,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'hosplist.dart';
-
 class Emergency extends StatefulWidget {
   const Emergency({super.key});
 
@@ -22,6 +20,7 @@ class _EmergencyState extends State<Emergency> {
     final double width=MediaQuery.of(context).size.width;
     final double height=MediaQuery.of(context).size.height;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -76,7 +75,7 @@ class _EmergencyState extends State<Emergency> {
             ),
             ElevatedButton(
                 onPressed:(){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HospitalList()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Emergency()));
                 } , 
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),

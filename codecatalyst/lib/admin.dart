@@ -1,3 +1,5 @@
+import 'package:codecatalyst/hosphome.dart';
+import 'package:codecatalyst/userhome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -14,6 +16,7 @@ class _AdminPageState extends State<AdminPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
           child: Column(
@@ -25,7 +28,7 @@ class _AdminPageState extends State<AdminPage> {
                   ),
             ElevatedButton(
                   onPressed:(){
-                    //Navigator.push(context, MaterialPageRoute(builder: (context)=>Emergency()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Hosp_Home()));
                   } , 
                   style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),
@@ -36,7 +39,7 @@ class _AdminPageState extends State<AdminPage> {
                   ),
                   ElevatedButton(
                   onPressed:(){
-                    //Navigator.push(context, MaterialPageRoute(builder: (context)=>Emergency()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>User_Home()));
                   } , 
                   style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),

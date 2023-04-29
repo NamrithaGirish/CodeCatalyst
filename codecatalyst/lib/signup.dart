@@ -16,6 +16,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  
   @override
 
   void initState() {
@@ -28,6 +29,7 @@ class _SignUpState extends State<SignUp> {
     TextEditingController password=TextEditingController();
     TextEditingController confirmpassword=TextEditingController();
     String text=' ';
+    //debugShowCheckedModeBanner: false;
     return Scaffold(
        backgroundColor :Color.fromARGB(255, 255, 255, 255),
       body: 
@@ -57,26 +59,9 @@ class _SignUpState extends State<SignUp> {
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
                   ),
-                    onPressed: () async{
-                      if(confirmpassword.text!=password.text){
-                        final snackBar = SnackBar(
-            content: const Text('Password does not match. Re-enter.',style: TextStyle(color: Colors.red,fontSize: 20),),
-            backgroundColor: Colors.white,
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              }
-              else{
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
-                     
-final snackBar = SnackBar(
-            content: Text(text ,style: TextStyle(color: Colors.red,fontSize: 20),),
-            backgroundColor: Colors.white,
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      }
-                    },
+                    onPressed: () {},
                   child: Text('SIGN UP',
-                  style: GoogleFonts.poppins(fontStyle: FontStyle.normal, fontWeight: FontWeight.w600,color: Colors.white),),
+                  style: GoogleFonts.poppins(fontStyle: FontStyle.normal, fontWeight: FontWeight.w600,color: Colors.white),) ,
                 )
               ),
           ],
