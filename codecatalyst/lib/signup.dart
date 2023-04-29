@@ -18,8 +18,8 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final supabase = SupabaseClient(
-    'https://dxhhmevcczynimcgirdd.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR4aGhtZXZjY3p5bmltY2dpcmRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODI3MjEwMzAsImV4cCI6MTk5ODI5NzAzMH0.LvLPJjnK2jGGenzg0EwccvN7BmVCW2z9TK85hVcJOZ4',
+    'https://projectname.supabase.co',
+    'api_key',
   );
   @override
 
